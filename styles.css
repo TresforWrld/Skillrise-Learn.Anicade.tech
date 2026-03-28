@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+}
+
+/* Rings Animation */
+.rings {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+}
+.ring {
+  position: absolute;
+  border: 2px solid #00f5ff;
+  border-radius: 50%;
+  animation: spin 6s linear infinite;
+}
+.ring:nth-child(1) {
+  width: 200px;
+  height: 200px;
+}
+.ring:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 25px;
+  left: 25px;
+  animation-duration: 8s;
+}
+.ring:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 50px;
+  left: 50px;
+  animation-duration: 10s;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hero Section */
+.hero {
+  padding: 40px 20px;
+}
+.hero-content h1 {
+  font-size: 2.5em;
+  margin: 20px 0;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #00f5ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.cta-btn:hover {
+  background: #00c3cc;
+}
+
+/* Modules Section */
+.modules {
+  padding: 40px 20px;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+}
+.card button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #00f5ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.card button:hover {
+  background: #00c3cc;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 20px;
+  margin-top: 40px;
+}
+.footer-links a {
+  color: #00f5ff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
