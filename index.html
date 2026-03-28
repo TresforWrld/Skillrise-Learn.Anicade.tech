@@ -8,6 +8,36 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<section class="editor">
+  <h2>Try Coding</h2>
+  <textarea id="code">console.log("Hello SkillRise!");</textarea>
+  <button onclick="runCode()">Run Code</button>
+  <pre id="output"></pre>
+</section>
+
+<!-- Load CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+
+<script>
+  // Initialize CodeMirror
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    mode: "javascript",
+    theme: "dracula"
+  });
+
+  function runCode() {
+    const code = editor.getValue();
+    try {
+      const result = eval(code);
+      document.getElementById("output").textContent = result ?? "Code ran successfully!";
+    } catch (err) {
+      document.getElementById("output").textContent = "Error: " + err.message;
+    }
+  }
+</script>
   <!-- Hero Section with Rings -->
   <section class="hero">
     <div class="rings">
